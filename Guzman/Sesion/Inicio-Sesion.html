@@ -46,8 +46,8 @@
             <h1>Iniciar Sesion</h1>
             <br />
             <form onsubmit="return validateForm()">
-              <input type="text" name="user" placeholder="Usuario" onkeypress="return onlyAllowNumbers(event)"/>
-              <input type="password" name="pass" placeholder="Contraseña" onkeypress="return allowAlphanumeric(event)"/>
+              <input type="text" name="user" id="user" placeholder="Usuario" onkeypress="return onlyAllowNumbers(event)" maxlength="10"/>
+              <input type="password" name="pass" id="pass" placeholder="Contraseña" onkeypress="return allowAlphanumeric(event)" maxlength="15"/>
               <input
                 type="submit"
                 name="login"
@@ -98,6 +98,7 @@
               event.preventDefault();
           }
       }
+      
   </script>
 
     <script src="/node_modules/jquery/dist/jquery.min.js	"></script>
