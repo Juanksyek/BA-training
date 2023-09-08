@@ -102,9 +102,8 @@
       function allowAlphanumeric(event) {
           var charCode = event.which || event.keyCode;
           if (
-              !(charCode >= 48 && charCode <= 57) && // Números
-              !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
-              !(charCode >= 97 && charCode <= 122) // Letras minúsculas
+              !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
+              !(charCode >= 164 && charCode <= 165) // Ñ, ñ
           ) {
               event.preventDefault();
           }
