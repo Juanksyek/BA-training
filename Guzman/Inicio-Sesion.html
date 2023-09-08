@@ -69,16 +69,26 @@
           var user = document.getElementById("user").value;
           var pass = document.getElementById("pass").value;
 
+          // Validar campo de usuario
           if (user === "") {
               alert("Por favor, ingrese un nombre de usuario.");
               return false;
-          }
-
-          if (pass === "") {
-              alert("Por favor, ingrese una contraseña.");
+          } else if (!/^\d{1,10}$/.test(user)) {
+              alert("Ingrese un nombre de usuario valido.");
               return false;
           }
 
+          // Validar campo de contraseña
+          if (pass === "") {
+              alert("Por favor, ingrese una contraseña.");
+              return false;
+          } else if (pass.length > 15) {
+              alert("Ingrese una contraseña valida.");
+              return false;
+          } else if (/\s/.test(pass)) {
+              alert("Ingrese una contraseña valida.");
+              return false;
+          }
           return true;
       }
 
