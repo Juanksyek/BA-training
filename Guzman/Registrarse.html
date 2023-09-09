@@ -62,23 +62,26 @@
           <div class="login-card">
             <h1>Registrarse</h1>
             <br />
-            <form>
-              <input type="text" name="user" placeholder="Nombre" />
-              <input type="text" name="user" placeholder="Apellido materno" />
-              <input type="text" name="user" placeholder="Apellido Paterno" />
-              <input type="number" name="user" placeholder="Edad"/>
-              <input type="email" name="user" placeholder="Correo" />
-              <input type="tel" name="user" placeholder="Teléfono" />
-              <input type="text" name="user" placeholder="Ocupación"/>
+            <form onsubmit="return validateForm()">
+              <input type="text" name="user" id="nombre" placeholder="Nombre" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="text" name="user" id="apm" placeholder="Apellido materno" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="text" name="user" id="app" placeholder="Apellido Paterno" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="tel" name="user" id="edad" placeholder="Edad" maxlength="2" onkeypress="return onlyAllowNumbers(event)"/>
+              <input type="email" name="user" id="correo" placeholder="Correo" maxlength="30" />
+              <input type="tel" name="user" id="tel" placeholder="Teléfono" maxlength="10" onkeypress="return onlyAllowNumbers(event)"/>
+              <input type="text" name="user" id="ocup" placeholder="Ocupación" maxlength="30" onkeypress="return allowNames(event)"/>
               <label for="direccion">Dirección</label>
-              <input type="text" name="user" placeholder="Calle" />
-              <input type="text" name="user" placeholder="Colonia" />
-              <input type="text" name="user" placeholder="Municipio" />
-              <input type="password" name="pass" placeholder="Contraseña" />
+              <input type="text" name="user" id="calle" placeholder="Calle" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="text" name="user" id="col" placeholder="Colonia" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="text" name="user" id="municipio" placeholder="Municipio" maxlength="30" onkeypress="return allowNames(event)"/>
+              <input type="password" name="pass" id="contra" placeholder="Contraseña" maxlength="15" onkeypress="return allowAlphanumeric(event)"/>
               <input
                 type="password"
                 name="pass"
+                id="confirmC"
                 placeholder="Confirmar Contraseña"
+                maxlength="15"
+                onkeypress="return allowAlphanumeric(event)"
               />
               <input
                 type="submit"
@@ -95,6 +98,126 @@
         </div>
       </div>
     </div>
+
+    <script>
+      function validateForm() {
+        var nombre = document.getElementById("nombre").value;
+        var apm = document.getElementById("apm").value;
+        var app = document.getElementById("app").value;
+        var edad = document.getElementById("edad").value;
+        var correo = document.getElementById("correo").value;
+        var tel = document.getElementById("tel").value;
+        var ocup = document.getElementById("ocup").value;
+        var calle = document.getElementById("calle").value;
+        var col = document.getElementById("col").value;
+        var municipio = document.getElementById("municipio").value;
+        var contra = document.getElementById("contra").value;
+        var confirmC = document.getElementById("confirmC").value;
+
+
+        // Validar campo nombre
+        if (nombre === "") {
+              alert("Por favor, ingrese su nombre.");
+              return false;
+        }      
+
+        // Validar campo apellido materno
+        if (apm === "") {
+              alert("Por favor, ingrese su apellido materno.");
+              return false;
+        }      
+
+        //Validar campo apellido paterno
+        if (app === "") {
+              alert("Por favor, ingrese un nombre de usuario.");
+              return false;
+        }      
+
+        //Validar campo edad
+        if (edad === "") {
+              alert("Por favor, ingrese su edad.");
+              return false;
+        }
+
+        //Validar campo correo
+        if (correo === "") {
+              alert("Por favor, ingrese un correo electrónico.");
+              return false;
+        }
+
+        //Validar campo telefono
+        if (tel === "") {
+              alert("Por favor, ingrese un número de teléfono.");
+              return false;
+        }
+
+        //Validar campo ocupación
+        if (ocup === "") {
+              alert("Por favor, ingrese su ocupación.");
+              return false;
+        }
+
+        //Validar campo calle
+        if (calle === "") {
+              alert("Por favor, ingrese la calle de su domicilio.");
+              return false;
+        }
+
+        //Validar campo colonia
+        if (col === "") {
+              alert("Por favor, ingrese la colonia de su domicilio.");
+              return false;
+        }
+
+        //Validar campo contra
+        if (contra === "") {
+              alert("Por favor, ingrese una contraseña.");
+              return false;
+        }
+
+        //Validar campo confirmación contra
+        if (user === "") {
+              alert("Por favor, confirme su contraseña.");
+              return false;
+        }
+
+
+        return true;
+
+      }
+
+      function onlyAllowNumbers(event) {
+          var charCode = event.which || event.keyCode;
+          
+          if (charCode < 48 || charCode > 57) {
+              event.preventDefault();
+          }
+      }
+
+      function allowNames(event) {
+          var charCode = event.which || event.keyCode;
+          console.log(charCode);
+          if (
+              !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
+              !(charCode >= 97 && charCode <= 122) &&// Letras minúsculas
+              !(charCode == 225) && !(charCode == 233) && !(charCode == 237) && !(charCode == 243) && !(charCode == 250) &&//vocales minüsculas con acento
+              !(charCode == 209) && !(charCode == 241)  //Ñ y ñ
+          ) {
+              event.preventDefault();
+          }
+      }
+
+      function allowAlphanumeric(event) {
+          var charCode = event.which || event.keyCode;
+          if (
+              !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
+              !(charCode >= 164 && charCode <= 165) // Ñ, ñ
+          ) {
+              event.preventDefault();
+          }
+      }
+
+    </script>
 
     <script src="../node_modules/jquery/dist/jquery.min.js	"></script>
     <script src="../Recursos/Code/Index.js"></script>
