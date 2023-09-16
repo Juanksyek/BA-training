@@ -18,42 +18,7 @@
   padding: 20px;
 }
 
-.container-card .box {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
 
-.container-card .box:before,
-.container-card .box:after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  z-index: -1;
-  background: inherit;
-  border-radius: inherit;
-}
-
-.container-card .box:nth-child(1):before,
-.container-card .box:nth-child(1):after {
-  background: linear-gradient(315deg, #fff, #6e6e6e);
-}
-
-.container-card .box:nth-child(2):before,
-.container-card .box:nth-child(2):after {
-  background: linear-gradient(315deg, #fff, #6e6e6e);
-}
-
-.container-card .box:nth-child(3):before,
-.container-card .box:nth-child(3):after {
-  background: linear-gradient(315deg, #fff, #6e6e6e);
-}
 
 
 .flex-card{
@@ -68,7 +33,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .container-card .box
@@ -207,12 +172,13 @@
   left: 0;
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1;
   transform: 0.5s;
   color: #fff;
+  display: grid;
+  justify-items: center;
 }
 
 .container-card .box:hover .content
@@ -222,12 +188,13 @@
 }
 
 .container-card .box .content img{
-  width: 100%;
+  width: 50%;
 }
 
 .container-card .box .content h2
 {
   font-size: 2em;
+  text-align: center;
   color: #111;
   margin-bottom: 10px;
 }
@@ -235,6 +202,7 @@
 .container-card .box .content p
 {
   font-size: 1.1em;
+  text-align: center;
   margin-bottom: 10px;
   line-height: 1.4em;
   color: #111;
@@ -258,4 +226,13 @@
   background: #ffcf4d;
   border: 1px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
+}
+
+.title{
+  position: absolute;
+  width: 90%;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  top: 10%;
 }
