@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Bootstrap/Responsive.css" />
     <link rel="stylesheet" href="/Bootstrap/Bootstrap.css" />
     <link rel="stylesheet" href="/Css/MenuStyles.css" />
-    <link rel="stylesheet" href="/Css/Login.css" />
+    <link rel="stylesheet" href="/Css/Register.css" />
     <title>Registrarse</title>
   </head>
   <body>
@@ -15,11 +15,7 @@
       <div class="header-wrapper">
         <div class="logo-wrap">
           <a href="#" class="end">
-            <img
-              style="width: 5%"
-              src="/Links/PNG/BA-white.png"
-              alt=""
-            />
+            <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="" />
           </a>
         </div>
         <div class="nav-but-wrap">
@@ -36,7 +32,7 @@
       <div class="nav__content">
         <ul class="nav__list">
           <li class="nav__list-item">
-            <a href="/regresar" class="hover-target">Inicio</a>
+            <a href="/inicio" class="hover-target">Inicio</a>
           </li>
           <li class="nav__list-item">
             <a href="#" class="hover-target">Sede</a>
@@ -45,7 +41,9 @@
             <a href="#" class="hover-target">Nosotros</a>
           </li>
           <li class="nav__list-item active-nav">
-            <a href="/Guzman/Inicio-Sesion.html" class="hover-target">Iniciar Sesion</a>
+            <a href="/Guzman/Inicio-Sesion.html" class="hover-target"
+              >Iniciar Sesion</a
+            >
           </li>
           <li class="nav__list-item">
             <a href="#" class="hover-target">Programa</a>
@@ -59,40 +57,150 @@
     <div class="section full-height over-hide">
       <div class="switch-wrap">
         <div class="contergeneral">
-          <div class="login-card">
-            <h1>Registrarse</h1>
+          <div class="form-container">
+            <h1 class="form-header">Registrarse</h1>
             <br />
             <form onsubmit="return validateForm()">
-              <input type="text" name="user" id="nombre" placeholder="Nombre" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="text" name="user" id="apm" placeholder="Apellido materno" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="text" name="user" id="app" placeholder="Apellido Paterno" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="tel" name="user" id="edad" placeholder="Edad" maxlength="2" onkeypress="return onlyAllowNumbers(event)"/>
-              <input type="email" name="user" id="correo" placeholder="Correo" maxlength="30" />
-              <input type="tel" name="user" id="tel" placeholder="Teléfono" maxlength="10" onkeypress="return onlyAllowNumbers(event)"/>
-              <input type="text" name="user" id="ocup" placeholder="Ocupación" maxlength="30" onkeypress="return allowNames(event)"/>
-              <label for="direccion">Dirección</label>
-              <input type="text" name="user" id="calle" placeholder="Calle" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="text" name="user" id="col" placeholder="Colonia" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="text" name="user" id="municipio" placeholder="Municipio" maxlength="30" onkeypress="return allowNames(event)"/>
-              <input type="password" name="pass" id="contra" placeholder="Contraseña" maxlength="15" onkeypress="return allowAlphanumeric(event)"/>
-              <input
-                type="password"
-                name="pass"
-                id="confirmC"
-                placeholder="Confirmar Contraseña"
-                maxlength="15"
-                onkeypress="return allowAlphanumeric(event)"
-              />
-              <input
-                type="submit"
-                name="register"
-                class="login login-submit"
-                value="Registrarse"
-              />
+              <div class="row">
+                <div class="col-md-6">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="user"
+                    id="nombre"
+                    placeholder="Nombre"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                  <p><input
+                    class="form-input"
+                    type="tel"
+                    name="user"
+                    id="edad"
+                    placeholder="Edad"
+                    maxlength="2"
+                    onkeypress="return onlyAllowNumbers(event)"
+                  /></p>
+                </div>
+                <div class="col-md-6">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="user"
+                    id="app"
+                    placeholder="Apellido Paterno"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="user"
+                    id="apm"
+                    placeholder="Apellido materno"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="email"
+                    name="user"
+                    id="correo"
+                    placeholder="Correo"
+                    maxlength="30"
+                  /></p>
+                </div>
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="tel"
+                    name="user"
+                    id="tel"
+                    placeholder="Teléfono"
+                    maxlength="10"
+                    onkeypress="return onlyAllowNumbers(event)"
+                  /></p>
+                </div>
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="user"
+                    id="ocup"
+                    placeholder="Ocupación"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                </div>
+              </div>
+              <div class="direccion">
+                <label for="direccion"><h2>Dirección</h2></label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><input
+                      type="text"
+                      name="user"
+                      id="calle"
+                      placeholder="Calle"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                    <p><input
+                      type="text"
+                      name="user"
+                      id="col"
+                      placeholder="Colonia"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><input
+                      type="text"
+                      name="user"
+                      id="municipio"
+                      placeholder="Municipio"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                    <p><input
+                      type="password"
+                      name="pass"
+                      id="contra"
+                      placeholder="Contraseña"
+                      maxlength="15"
+                      onkeypress="return allowAlphanumeric(event)"
+                    /></p>
+                  </div>
+                </div>
+                <p>
+                  <input
+                    type="password"
+                    name="pass"
+                    id="confirmC"
+                    placeholder="Confirmar Contraseña"
+                    maxlength="15"
+                    onkeypress="return allowAlphanumeric(event)"
+                  />
+                </p>
+                <br />
+              </div>
+              <div class="center">
+                <input
+                  type="submit"
+                  name="register"
+                  class="form-submit"
+                  value="Registrarse"
+                />
+              </div>
             </form>
 
-            <div class="login-help">
-              <a href="/Guzman/Inicio-Sesion.html">Iniciar Sesion</a>
+            <div class="form-help">
+              <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesion</a></p>
             </div>
           </div>
         </div>
@@ -114,109 +222,110 @@
         var contra = document.getElementById("contra").value;
         var confirmC = document.getElementById("confirmC").value;
 
-
         // Validar campo nombre
         if (nombre === "") {
-              alert("Por favor, ingrese su nombre.");
-              return false;
-        }      
+          alert("Por favor, ingrese su nombre.");
+          return false;
+        }
 
         // Validar campo apellido materno
         if (apm === "") {
-              alert("Por favor, ingrese su apellido materno.");
-              return false;
-        }      
+          alert("Por favor, ingrese su apellido materno.");
+          return false;
+        }
 
         //Validar campo apellido paterno
         if (app === "") {
-              alert("Por favor, ingrese un nombre de usuario.");
-              return false;
-        }      
+          alert("Por favor, ingrese un nombre de usuario.");
+          return false;
+        }
 
         //Validar campo edad
         if (edad === "") {
-              alert("Por favor, ingrese su edad.");
-              return false;
+          alert("Por favor, ingrese su edad.");
+          return false;
         }
 
         //Validar campo correo
         if (correo === "") {
-              alert("Por favor, ingrese un correo electrónico.");
-              return false;
+          alert("Por favor, ingrese un correo electrónico.");
+          return false;
         }
 
         //Validar campo telefono
         if (tel === "") {
-              alert("Por favor, ingrese un número de teléfono.");
-              return false;
+          alert("Por favor, ingrese un número de teléfono.");
+          return false;
         }
 
         //Validar campo ocupación
         if (ocup === "") {
-              alert("Por favor, ingrese su ocupación.");
-              return false;
+          alert("Por favor, ingrese su ocupación.");
+          return false;
         }
 
         //Validar campo calle
         if (calle === "") {
-              alert("Por favor, ingrese la calle de su domicilio.");
-              return false;
+          alert("Por favor, ingrese la calle de su domicilio.");
+          return false;
         }
 
         //Validar campo colonia
         if (col === "") {
-              alert("Por favor, ingrese la colonia de su domicilio.");
-              return false;
+          alert("Por favor, ingrese la colonia de su domicilio.");
+          return false;
         }
 
         //Validar campo contra
         if (contra === "") {
-              alert("Por favor, ingrese una contraseña.");
-              return false;
+          alert("Por favor, ingrese una contraseña.");
+          return false;
         }
 
         //Validar campo confirmación contra
         if (user === "") {
-              alert("Por favor, confirme su contraseña.");
-              return false;
+          alert("Por favor, confirme su contraseña.");
+          return false;
         }
 
-
         return true;
-
       }
 
       function onlyAllowNumbers(event) {
-          var charCode = event.which || event.keyCode;
-          
-          if (charCode < 48 || charCode > 57) {
-              event.preventDefault();
-          }
+        var charCode = event.which || event.keyCode;
+
+        if (charCode < 48 || charCode > 57) {
+          event.preventDefault();
+        }
       }
 
       function allowNames(event) {
-          var charCode = event.which || event.keyCode;
-          console.log(charCode);
-          if (
-              !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
-              !(charCode >= 97 && charCode <= 122) &&// Letras minúsculas
-              !(charCode == 225) && !(charCode == 233) && !(charCode == 237) && !(charCode == 243) && !(charCode == 250) &&//vocales minüsculas con acento
-              !(charCode == 209) && !(charCode == 241)  //Ñ y ñ
-          ) {
-              event.preventDefault();
-          }
+        var charCode = event.which || event.keyCode;
+        console.log(charCode);
+        if (
+          !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
+          !(charCode >= 97 && charCode <= 122) && // Letras minúsculas
+          !(charCode == 225) &&
+          !(charCode == 233) &&
+          !(charCode == 237) &&
+          !(charCode == 243) &&
+          !(charCode == 250) && //vocales minüsculas con acento
+          !(charCode == 209) &&
+          !(charCode == 241) //Ñ y ñ
+        ) {
+          event.preventDefault();
+        }
       }
 
       function allowAlphanumeric(event) {
-          var charCode = event.which || event.keyCode;
-          if (
-              !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
-              !(charCode >= 164 && charCode <= 165) // Ñ, ñ
-          ) {
-              event.preventDefault();
-          }
+        var charCode = event.which || event.keyCode;
+        if (
+          !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
+          !(charCode >= 164 && charCode <= 165) // Ñ, ñ
+        ) {
+          event.preventDefault();
+        }
       }
-
     </script>
     <script src="/Code/Index.js"></script>
   </body>

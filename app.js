@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
 //------------Aqui van los links y vistas------------//
 
 //Regresar al index estando en cualquier opcion
-app.get("/regresar", function(req, res){
+app.get("/inicio", function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
 
@@ -28,6 +28,11 @@ app.get("/Guzman/Inicio-Sesion.html", function(req, res) {
 //Abrir la opcion registrarse estando en iniciar sesion
 app.get("/Guzman/Registrarse.html", function(req, res){
     res.sendFile(__dirname + "/Guzman/Registrarse.html");
+});
+
+//Vista admin prueba
+app.get("/Usuario-Admin/Inicio-Admin.html", function(req, res){
+    res.sendFile(__dirname + "/Usuario-Admin/Inicio-Admin.html");
 });
 
 

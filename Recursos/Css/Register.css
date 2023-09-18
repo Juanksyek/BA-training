@@ -1,0 +1,79 @@
+.form-container {
+  width: 550px;
+  margin: 16px auto;
+  font-size: 16px;
+  background: #ebebeb;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-header {
+  background: #28d;
+  padding: 10px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+}
+
+.form-submit {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 10px;
+  display: block;
+  width: 50%;
+  font-size: 0.95em;
+  margin-bottom: 12px;
+}
+
+.form-submit:hover {
+  background: #17c;
+}
+
+.form-submit input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.form-help a {
+  color: #28d;
+  text-decoration: none;
+}
+
+.direccion input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-width: 0;
+    border-style: solid;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }

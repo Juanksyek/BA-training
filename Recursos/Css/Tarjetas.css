@@ -191,20 +191,18 @@
   width: 50%;
 }
 
-.container-card .box .content h2
-{
-  font-size: 2em;
+.container-card .box .content h2 {
+  font-size: 18px;
   text-align: center;
   color: #111;
   margin-bottom: 10px;
 }
 
-.container-card .box .content p
-{
-  font-size: 1.1em;
+.container-card .box .content p {
+  font-size: 16px;
   text-align: center;
-  margin-bottom: 10px;
-  line-height: 1.4em;
+  margin-bottom: 5px;
+  line-height: 20px;
   color: #111;
 }
 
