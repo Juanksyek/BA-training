@@ -78,30 +78,43 @@
       function validateForm() {
           var user = document.getElementById("user").value;
           var pass = document.getElementById("pass").value;
-
+    
+          // Validar campo de usuario
           if (user === "") {
               alert("Por favor, ingrese un nombre de usuario.");
               return false;
+          } else if (!/^\d{1,10}$/.test(user)) {
+              alert("Ingrese un nombre de usuario válido.");
+              return false;
           }
-
+    
+          // Validar campo de contraseña
           if (pass === "") {
               alert("Por favor, ingrese una contraseña.");
               return false;
+          } else if (pass.length > 15) {
+              alert("Ingrese una contraseña válida (máximo 15 caracteres).");
+              return false;
+          } else if (/\s/.test(pass)) {
+              alert("La contraseña no puede contener espacios.");
+              return false;
           }
-
+    
           return true;
       }
-
+    
       function onlyAllowNumbers(event) {
           var charCode = event.which || event.keyCode;
           if (charCode < 48 || charCode > 57) {
               event.preventDefault();
           }
       }
-
+    
       function allowAlphanumeric(event) {
           var charCode = event.which || event.keyCode;
           if (
+              !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
+              !(charCode >= 164 && charCode <= 165) && // Ñ, ñ
               !(charCode >= 48 && charCode <= 57) && // Números
               !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
               !(charCode >= 97 && charCode <= 122) // Letras minúsculas
@@ -109,8 +122,8 @@
               event.preventDefault();
           }
       }
-      
-  </script>
+    </script>
+    
 
     <script src="/Code/Index.js"></script>
   </body>
