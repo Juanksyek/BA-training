@@ -4,23 +4,23 @@ const mysql = require('mysql');
 const app = express();
 
 
-// Configuración de la conexión a la base de datos
-const db = mysql.createConnection({
-    host: '127.0.0.1',  // La dirección del servidor 
-    port: 3306,
-    user: 'root',  // Nombre de usuario de la base de datos ()
-    password: 'Admin',  // Contraseña de la base de datos
-    database: 'bat_db'  // El nombre de tu base de datos
-  });
+// // Configuración de la conexión a la base de datos
+// const db = mysql.createConnection({
+//     host: '127.0.0.1',  // La dirección del servidor 
+//     port: 3306,
+//     user: 'root',  // Nombre de usuario de la base de datos ()
+//     password: 'Admin',  // Contraseña de la base de datos
+//     database: 'bat_db'  // El nombre de tu base de datos
+//   });
   
-  // Conectar a la base de datos
-  db.connect((err) => {
-    if (err) {
-      console.error('Error al conectar a la base de datos:', err);
-      throw err;
-    }
-    console.log('Conexión exitosa a la base de datos MySQL');
-  });
+//   // Conectar a la base de datos
+//   db.connect((err) => {
+//     if (err) {
+//       console.error('Error al conectar a la base de datos:', err);
+//       throw err;
+//     }
+//     console.log('Conexión exitosa a la base de datos MySQL');
+//   });
 
 app.use(bodyParser.urlencoded({extended: true }));
 
@@ -53,6 +53,11 @@ app.get("/Guzman/Registrarse.html", function(req, res){
 //Vista admin prueba
 app.get("/Usuario-Admin/Inicio-Admin.html", function(req, res){
     res.sendFile(__dirname + "/Usuario-Admin/Inicio-Admin.html");
+});
+
+//Vista recepcionista prueba
+app.get("/Usuario-Recepcionista/Inicio-Recepcionista.html", function (req, res) {
+    res.sendFile(__dirname + "/Usuario-Recepcionista/Inicio-Recepcionista.html");
 });
 
 
