@@ -1,6 +1,26 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mysql = require('mysql');
 const app = express();
+
+
+// Configuración de la conexión a la base de datos
+const db = mysql.createConnection({
+    host: '127.0.0.1',  // La dirección del servidor 
+    port: 3306,
+    user: 'root',  // Nombre de usuario de la base de datos ()
+    password: 'Admin',  // Contraseña de la base de datos
+    database: 'bat_db'  // El nombre de tu base de datos
+  });
+  
+  // Conectar a la base de datos
+  db.connect((err) => {
+    if (err) {
+      console.error('Error al conectar a la base de datos:', err);
+      throw err;
+    }
+    console.log('Conexión exitosa a la base de datos MySQL');
+  });
 
 app.use(bodyParser.urlencoded({extended: true }));
 
