@@ -8,7 +8,7 @@
 <body>
     <div>
         <h1>Registrar Personal</h1>
-        <form action="#">
+        <form action="/registrarPersonal" method="POST">
             <p><input 
                 type="text"
                 name="nombre" 
@@ -33,7 +33,7 @@
                 placeholder="Nombre de Usuario"
                 maxlength="30"
             ></p>
-            <p><select>
+            <p><select name="tipoUsuario">
                 <option value="">Selecciona tipo de usuario</option>
                 <option value="admin">Administrador</option>
                 <option value="recepcionista">Recepcionista</option>
@@ -51,6 +51,7 @@
             ></p>
             <p><input 
                 type="password"
+                name="contrasena"
                 placeholder="Confirmar Contraseña"
                 maxlength="15"
             ></p>

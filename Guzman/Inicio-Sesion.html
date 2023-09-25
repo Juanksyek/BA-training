@@ -64,9 +64,9 @@
             
             <h2 class="login-header">Iniciar Sesion</h2>
           
-            <form class="login-container">
-              <p><input type="email" placeholder="Usuario"></p>
-              <p><input type="password" placeholder="Contraseña"></p>
+            <form class="login-container" onsubmit="return validateForm()"">
+              <p><input type="text" id="user" placeholder="Usuario" onkeypress="return onlyAllowNumbers(event)" maxlength="10"></p>
+              <p><input type="password" id="pass" placeholder="Contraseña" onkeypress="return allowAlphanumeric(event)" maxlength="15"></p>
               <p class="center"><input type="submit" value="Ingresar"></p>
             </form>
           </div>
@@ -93,10 +93,10 @@
               alert("Por favor, ingrese una contraseña.");
               return false;
           } else if (pass.length > 15) {
-              alert("Ingrese una contraseña válida (máximo 15 caracteres).");
+              alert("Ingrese una contraseña valida.");
               return false;
           } else if (/\s/.test(pass)) {
-              alert("La contraseña no puede contener espacios.");
+              alert("Ingrese una contraseña valida.");
               return false;
           }
     
@@ -113,11 +113,8 @@
       function allowAlphanumeric(event) {
           var charCode = event.which || event.keyCode;
           if (
-              !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
-              !(charCode >= 164 && charCode <= 165) && // Ñ, ñ
-              !(charCode >= 48 && charCode <= 57) && // Números
-              !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
-              !(charCode >= 97 && charCode <= 122) // Letras minúsculas
+              !(charCode >= 33 && charCode <= 125) && // Caracteres permitidos
+              !(charCode >= 164 && charCode <= 165) // Ñ, ñ
           ) {
               event.preventDefault();
           }

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/dlx2edd.css" />
+    <link rel="stylesheet" href="/Bootstrap/Responsive.css" />
+    <link rel="stylesheet" href="/Bootstrap/Bootstrap.css" />
+    <link rel="stylesheet" href="/Css/MenuStyles.css" />
+    <link rel="stylesheet" href="/Css/Register.css" />
+    <title>Registrarse</title>
+  </head>
+  <body>
+    <header class="cd-header">
+      <div class="header-wrapper">
+        <div class="logo-wrap">
+          <a href="#" class="end">
+            <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="" />
+          </a>
+        </div>
+        <div class="nav-but-wrap">
+          <div class="menu-icon hover-target">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav">
+      <div class="nav__content">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a href="/inicio" class="hover-target">Inicio</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Sede</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Nosotros</a>
+          </li>
+          <li class="nav__list-item active-nav">
+            <a href="/Guzman/Inicio-Sesion.html" class="hover-target"
+              >Iniciar Sesion</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Programa</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section full-height over-hide">
+      <div class="switch-wrap">
+        <div class="contergeneral">
+          <div class="form-container">
+            <h1 class="form-header">Registrarse</h1>
+            <br />
+            <form onsubmit="return validateForm()">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="nombre" 
+                    id="nombre"
+                    placeholder="Nombre"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                  <p><input
+                    class="form-input"
+                    type="tel"
+                    name="edad" 
+                    id="edad"
+                    placeholder="Edad"
+                    maxlength="2"
+                    onkeypress="return onlyAllowNumbers(event)"
+                  /></p>
+                </div>
+                <div class="col-md-6">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="apellidoP" 
+                    id="app"
+                    placeholder="Apellido Paterno"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="apellidoM" 
+                    id="apm"
+                    placeholder="Apellido materno"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="email"
+                    name="correoElectronico" 
+                    id="correo"
+                    placeholder="Correo"
+                    maxlength="30"
+                  /></p>
+                </div>
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="tel"
+                    name="telefono" 
+                    id="tel"
+                    placeholder="Teléfono"
+                    maxlength="10"
+                    onkeypress="return onlyAllowNumbers(event)"
+                  /></p>
+                </div>
+                <div class="col-md-4">
+                  <p><input
+                    class="form-input"
+                    type="text"
+                    name="ocupacion" 
+                    id="ocup"
+                    placeholder="Ocupación"
+                    maxlength="30"
+                    onkeypress="return allowNames(event)"
+                  /></p>
+                </div>
+              </div>
+              <div class="direccion">
+                <label for="direccion"><h2>Dirección</h2></label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><input
+                      type="text"
+                      name="calle" 
+                      id="calle"
+                      placeholder="Calle"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                    <p><input
+                      type="text"
+                      name="colonia" 
+                      id="col"
+                      placeholder="Colonia"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><input
+                      type="text"
+                      name="municipio" 
+                      id="municipio"
+                      placeholder="Municipio"
+                      maxlength="30"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                    <p><input
+                      type="text"
+                      name="matricula"
+                      id="matricula"
+                      placeholder="Matricula"
+                      maxlength="10"
+                      onkeypress="return allowNames(event)"
+                    /></p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><input
+                      type="password"
+                      name="pass"
+                      id="contra"
+                      placeholder="Contraseña"
+                      maxlength="15"
+                      onkeypress="return allowAlphanumeric(event)"
+                    /></p>
+                  </div>
+                  <div class="col-md-6">
+                    <p>
+                      <input
+                        type="password"
+                        name="contrasena"
+                        id="confirmC"
+                        placeholder="Confirmar Contraseña"
+                        maxlength="15"
+                        onkeypress="return allowAlphanumeric(event)"
+                      />
+                    </p>
+                  </div>
+                </div>
+                <br />
+              </div>
+              <div class="center">
+                <input
+                  type="submit"
+                  name="register"
+                  class="form-submit"
+                  value="Registrarse"
+                />
+              </div>
+            </form>
+
+            <div class="form-help">
+              <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesion</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function validateForm() {
+        var nombre = document.getElementById("nombre").value;
+        var apm = document.getElementById("apm").value;
+        var app = document.getElementById("app").value;
+        var edad = document.getElementById("edad").value;
+        var correo = document.getElementById("correo").value;
+        var tel = document.getElementById("tel").value;
+        var ocup = document.getElementById("ocup").value;
+        var calle = document.getElementById("calle").value;
+        var col = document.getElementById("col").value;
+        var municipio = document.getElementById("municipio").value;
+        var contra = document.getElementById("contra").value;
+        var confirmC = document.getElementById("confirmC").value;
+
+        // Validar campo nombre
+        if (nombre === "") {
+          alert("Por favor, ingrese su nombre.");
+          return false;
+        }
+
+        // Validar campo apellido materno
+        if (apm === "") {
+          alert("Por favor, ingrese su apellido materno.");
+          return false;
+        }
+
+        //Validar campo apellido paterno
+        if (app === "") {
+          alert("Por favor, ingrese un nombre de usuario.");
+          return false;
+        }
+
+        //Validar campo edad
+        if (edad === "") {
+          alert("Por favor, ingrese su edad.");
+          return false;
+        }
+
+        /*
+        //Validar campo correo
+        if (correo === "") {
+          alert("Por favor, ingrese un correo electrónico.");
+          return false;
+        }
+
+        //Validar campo telefono
+        if (tel === "") {
+          alert("Por favor, ingrese un número de teléfono.");
+          return false;
+        }
+
+        //Validar campo ocupación
+        if (ocup === "") {
+          alert("Por favor, ingrese su ocupación.");
+          return false;
+        }
+
+        //Validar campo calle
+        if (calle === "") {
+          alert("Por favor, ingrese la calle de su domicilio.");
+          return false;
+        }
+
+        //Validar campo colonia
+        if (col === "") {
+          alert("Por favor, ingrese la colonia de su domicilio.");
+          return false;
+        }*/
+
+        //Validar campo contra
+        if (contra === "") {
+          alert("Por favor, ingrese una contraseña.");
+          return false;
+        }
+
+        //Validar campo confirmación contra
+        if (user === "") {
+          alert("Por favor, confirme su contraseña.");
+          return false;
+        }
+        //  Enviar la solicitud POST
+        const formData = new FormData(document.querySelector('form'));
+        fetch('/registrarAlumno', {
+          method: 'POST',
+          body: formData
+        })
+          .then(response => {
+            console.info('Solicitud POST exitosa');
+          })
+          .catch(error => {
+            console.error('Error al enviar la solicitud POST:', error);
+          });
+        
+        return false;
+      }
+
+      function onlyAllowNumbers(event) {
+        var charCode = event.which || event.keyCode;
+
+        if (charCode < 48 || charCode > 57) {
+          event.preventDefault();
+        }
+      }
+
+      function allowNames(event) {
+        var charCode = event.which || event.keyCode;
+        console.log(charCode);
+        if (
+          !(charCode >= 65 && charCode <= 90) && // Letras mayúsculas
+          !(charCode >= 97 && charCode <= 122) && // Letras minúsculas
+          !(charCode == 225) &&
+          !(charCode == 233) &&
+          !(charCode == 237) &&
+          !(charCode == 243) &&
+          !(charCode == 250) && //vocales minüsculas con acento
+          !(charCode == 209) &&
+          !(charCode == 241) //Ñ y ñ
+        ) {
+          event.preventDefault();
+        }
+      }
+
+      function allowAlphanumeric(event) {
+        var charCode = event.which || event.keyCode;
+        if (
+          !(charCode >= 33 && charCode <= 122) && // Caracteres permitidos
+          !(charCode >= 164 && charCode <= 165) // Ñ, ñ
+        ) {
+          event.preventDefault();
+        }
+      }
+    </script>
+    <script src="/Code/Index.js"></script>
+  </body>
+</html>

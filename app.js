@@ -4,23 +4,27 @@ const mysql = require('mysql');
 const app = express();
 
 
+
 // Configuración de la conexión a la base de datos
 const db = mysql.createConnection({
     host: '127.0.0.1',  // La dirección del servidor 
     port: 3306,
     user: 'root',  // Nombre de usuario de la base de datos ()
-    password: 'Admin',  // Contraseña de la base de datos
+    password: '',  // Contraseña de la base de datos
     database: 'bat_db'  // El nombre de tu base de datos
-  });
-  
-  // Conectar a la base de datos
-  db.connect((err) => {
-    if (err) {
-      console.error('Error al conectar a la base de datos:', err);
-      throw err;
-    }
-    console.log('Conexión exitosa a la base de datos MySQL');
-  });
+});
+
+// Conectar a la base de datos
+db.connect((err) => {
+if (err) {
+    console.error('Error al conectar a la base de datos:', err);
+    throw err;
+}
+console.log('Conexión exitosa a la base de datos');
+});
+
+
+module.exports.db = db;
 
 app.use(bodyParser.urlencoded({extended: true }));
 
@@ -46,9 +50,15 @@ app.get("/Guzman/Inicio-Sesion.html", function(req, res) {
 });
 
 //Abrir la opcion registrarse estando en iniciar sesion
-app.get("/Guzman/Registrarse.html", function(req, res){
-    res.sendFile(__dirname + "/Guzman/Registrarse.html");
+app.get("/Usuario-Recepcionista/Registrar-Alumnos.html", function(req, res){
+    res.sendFile(__dirname + "/Usuario-Recepcionista/Registrar-Alumnos.html");
 });
+// Controlador de registrar alumnos
+const controladorRegistrarAlumnos = require('./controlador-Registrar-Alumnos');
+
+// Ruta del controlador de registro bajo la raíz '/'
+app.use('/', controladorRegistrarAlumnos);
+
 
 //Vista admin prueba
 app.get("/Usuario-Admin/Inicio-Admin.html", function(req, res){
@@ -62,10 +72,18 @@ app.get("/Usuario-Recepcionista/Inicio-Recepcionista.html", function (req, res) 
 
 
 
+// Vista Registrar-Cuenta HTML
+app.get('/Usuario-Recepcionista/Registrar-Personal.html', function (req, res) {
+    res.sendFile(__dirname + '/Usuario-Recepcionista/Registrar-Personal.html');
+});
 
 
+// Importar el controlador para registrar personal
+// Importar el controlador de registro desde su nueva ubicación en "controladores"
+const controladorRegistrarPersonal = require('./controlador-Registrar-Personal');
 
-
+// Usar las rutas del controlador de registro
+app.use('/', controladorRegistrarPersonal); 
 
 
 
