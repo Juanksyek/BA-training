@@ -1,4 +1,4 @@
-.form-container {
+.form-container, .form-container-medium {
   width: 550px;
   margin: 16px auto;
   font-size: 16px;
@@ -6,6 +6,10 @@
   padding: 12px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-container-medium {
+  width: 750px;
 }
 
 .form-header {
@@ -33,6 +37,16 @@
   font-family: inherit;
   font-size: 0.95em;
   margin-bottom: 12px;
+}
+
+form select {
+  background: #fff;
+  border-color: #bbb;
+  color: #404040;
+}
+
+textarea::placeholder {
+  text-align: center;
 }
 
 .form-submit {

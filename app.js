@@ -71,8 +71,12 @@ app.get("/Usuario-Recepcionista/Inicio-Recepcionista.html", function (req, res) 
 });
 
 
+//Vista Registrar-Cuenta
+app.get('/Usuario-Cobranza/Registrar-Cuenta.html', function(req, res) {
+    res.sendFile(__dirname + '/Usuario-Cobranza/Registrar-Cuenta.html');
+}); 
 
-// Vista Registrar-Cuenta HTML
+// Vista Registrar-Personal HTML
 app.get('/Usuario-Recepcionista/Registrar-Personal.html', function (req, res) {
     res.sendFile(__dirname + '/Usuario-Recepcionista/Registrar-Personal.html');
 });

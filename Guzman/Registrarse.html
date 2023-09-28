@@ -97,7 +97,7 @@
                     type="text"
                     name="user"
                     id="apm"
-                    placeholder="Apellido materno"
+                    placeholder="Apellido Materno"
                     maxlength="30"
                     onkeypress="return allowNames(event)"
                   /></p>
@@ -222,9 +222,9 @@
     <script>
       function validateForm() {
         var nombre = document.getElementById("nombre").value;
-        var apm = document.getElementById("apm").value;
-        var app = document.getElementById("app").value;
         var edad = document.getElementById("edad").value;
+        var app = document.getElementById("app").value;
+        var apm = document.getElementById("apm").value;
         var correo = document.getElementById("correo").value;
         var tel = document.getElementById("tel").value;
         var ocup = document.getElementById("ocup").value;
@@ -240,21 +240,21 @@
           return false;
         }
 
-        // Validar campo apellido materno
-        if (apm === "") {
-          alert("Por favor, ingrese su apellido materno.");
+        //Validar campo edad
+        if (edad === "") {
+          alert("Por favor, ingrese su edad.");
           return false;
         }
 
         //Validar campo apellido paterno
         if (app === "") {
-          alert("Por favor, ingrese un nombre de usuario.");
+          alert("Por favor, ingrese su apellido paterno.");
           return false;
         }
-
-        //Validar campo edad
-        if (edad === "") {
-          alert("Por favor, ingrese su edad.");
+        
+        // Validar campo apellido materno
+        if (apm === "") {
+          alert("Por favor, ingrese su apellido materno.");
           return false;
         }
 
