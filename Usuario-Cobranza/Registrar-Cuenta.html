@@ -1,346 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/dlx2edd.css" />
     <link rel="stylesheet" href="/Bootstrap/Responsive.css" />
     <link rel="stylesheet" href="/Bootstrap/Bootstrap.css" />
     <link rel="stylesheet" href="/Css/MenuStyles.css" />
     <link rel="stylesheet" href="/Css/Register.css" />
     <title>Registro de Cuenta</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-wrapper">
-            <div class="logo-wrap">
-                <a href="#" class="end">
-                <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="" />
-                </a>
-            </div>
-            <div class="nav-but-wrap">
-                <div class="menu-icon hover-target">
-                <span class="menu-icon__line menu-icon__line-left"></span>
-                <span class="menu-icon__line"></span>
-                <span class="menu-icon__line menu-icon__line-right"></span>
-                </div>
-            </div>
+      <div class="header-wrapper">
+        <div class="logo-wrap">
+          <a href="#" class="end">
+            <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="" />
+          </a>
         </div>
+        <div class="nav-but-wrap">
+          <div class="menu-icon hover-target">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <div class="nav">
-        <div class="nav__content">
-          <ul class="nav__list">
-            <li class="nav__list-item">
-              <a href="/inicio" class="hover-target">Inicio</a>
-            </li>
-            <li class="nav__list-item">
-              <a href="#" class="hover-target">Sede</a>
-            </li>
-            <li class="nav__list-item">
-              <a href="#" class="hover-target">Nosotros</a>
-            </li>
-            <li class="nav__list-item active-nav">
-              <a href="/Guzman/Inicio-Sesion.html" class="hover-target">Iniciar Sesion</a>
-            </li>
-            <li class="nav__list-item">
-              <a href="#" class="hover-target">Programa</a>
-            </li>
-            <li class="nav__list-item">
-              <a href="#" class="hover-target">Contacto</a>
-            </li>
-          </ul>
-        </div>
+      <div class="nav__content">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a href="/inicio" class="hover-target">Inicio</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Sede</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Nosotros</a>
+          </li>
+          <li class="nav__list-item active-nav">
+            <a href="/Guzman/Inicio-Sesion.html" class="hover-target"
+              >Iniciar Sesion</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Programa</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    
+
     <div class="section full-height over-hide">
-        <div class="switch-wrap">
-            <div class="contergeneral">
-                <div class="form-container-medium">
-                    <h1 class="form-header">Registrar Cuenta</h1>
-                    <br>
-                    <form action="#">
-                        <label for=""><h2>Datos de la cuenta</h2></label>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="numCuenta"
-                                    placeholder="Número de Cuenta"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="ciudad"
-                                    placeholder="Ciudad"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="ejecutivo"
-                                    placeholder="Ejecutivo de publicidad"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="matricula"
-                                    placeholder="Matricula"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="date"
-                                    name="fechaMatricula"
-                                    placeholder="Fecha de matricula"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="precioPactado"
-                                    placeholder="Precio pactado"
-                                ></p>
-                            </div>
-                            <div class="col-md-3">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="pagoIncial"
-                                    placeholder="Pago inicial"
-                                ></p>
-                            </div>
-                            <div class="col-md-3">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="saldo"
-                                    placeholder="Saldo"
-                                ></p>
-                            </div>
-                            <div class="col-md-3">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="numPagos"
-                                    placeholder="N.º de pagos"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="number"
-                                    name="montoMens"
-                                    placeholder="Monto de mensualidad"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="date"
-                                    name="primerVenc"
-                                    placeholder="Primer vencimiento"
-                                ></p>
-                            </div>
-                        </div>
-                        <textarea
-                            style="resize: none;"
-                            class="form-input"
-                            name="notas"
-                            id="notas"
-                            rows="3"
-                            placeholder="NOTAS"
-                        ></textarea>
-                        
-                        <div class="titular">
-                            <label for=""><h2>Datos del titular</h2></label>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="name"
-                                        placeholder="Nombre"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="apellidoP"
-                                        placeholder="Apellido Paterno"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="apellidoM"
-                                        placeholder="Apellido Materno"
-                                    ></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="dirección"
-                                        placeholder="Dirección"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="colonia"
-                                        placeholder="Colonia"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="municipio"
-                                        placeholder="Municipio"
-                                    ></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="number"
-                                        name="cp"
-                                        placeholder="Código Postal"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="tel"
-                                        name="tel"
-                                        placeholder="Teléfono"
-                                    ></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <p><input
-                                        class="form-input"
-                                        type="tel"
-                                        name="cel"
-                                        placeholder="Celular"
-                                    ></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md">
-                                    <p><input
-                                        class="form-input"
-                                        type="email"
-                                        name="correo"
-                                        placeholder="Correo"
-                                    ></p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="lugarChamba">
-                            <label for=""><h2>Datos del lugar de trabajo</h2></label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="empresa"
-                                        placeholder="Empresa"
-                                    ></p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="tel"
-                                        name="tel"
-                                        placeholder="Teléfono"
-                                    ></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="dirección"
-                                        placeholder="Dirección"
-                                    ></p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="col"
-                                        placeholder="Colonia"
-                                    ></p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="text"
-                                        name="municipio"
-                                        placeholder="Municipio"
-                                    ></p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><input
-                                        class="form-input"
-                                        type="number"
-                                        name="cp"
-                                        placeholder="Código Postal"
-                                    ></p>
-                                </div>
-                            </div>
-                            <br>
-                        </div>
-                        <div class="center">
-                            <input
-                                class="form-submit"
-                                type="submit"
-                                name="registrarC"
-                                id="registrarC"
-                                value="Registrar"
-                            >
-                        </div>
-                    </form>
-
-                    <div class="form-help">
-                        <p><a href="/Guzman/Inicio-Sesion.html">Inciar Sesión</a></p>
-                    </div>
-                </div>
+      <div class="switch-wrap" style="top: 0; transform: none;">
+        <div class="form-container-medium">
+          <h1 class="form-header">Registrar Cuenta</h1>
+          <br />
+          <form action="#">
+            <label for=""
+              ><h2 style="margin-top: 0; margin-bottom: 0">
+                Datos de la cuenta
+              </h2></label
+            >
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="numCuenta"
+                    placeholder="Número de Cuenta"
+                  />
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="text"
+                    name="ciudad"
+                    placeholder="Ciudad"
+                  />
+                </p>
+              </div>
             </div>
+            <div class="row">
+              <div class="col-md">
+                <p>
+                  <input
+                    class="form-input"
+                    type="text"
+                    name="ejecutivo"
+                    placeholder="Ejecutivo de publicidad"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="matricula"
+                    placeholder="Matricula"
+                  />
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="date"
+                    name="fechaMatricula"
+                    placeholder="Fecha de matricula"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="precioPactado"
+                    placeholder="Precio pactado"
+                  />
+                </p>
+              </div>
+              <div class="col-md-3">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="pagoIncial"
+                    placeholder="Pago inicial"
+                  />
+                </p>
+              </div>
+              <div class="col-md-3">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="saldo"
+                    placeholder="Saldo"
+                  />
+                </p>
+              </div>
+              <div class="col-md-3">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="numPagos"
+                    placeholder="N.º de pagos"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="number"
+                    name="montoMens"
+                    placeholder="Monto de mensualidad"
+                  />
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <input
+                    class="form-input"
+                    type="date"
+                    name="primerVenc"
+                    placeholder="Primer vencimiento"
+                  />
+                </p>
+              </div>
+            </div>
+            <textarea
+              style="resize: none"
+              class="form-input"
+              name="notas"
+              id="notas"
+              rows="3"
+              placeholder="NOTAS"
+            ></textarea>
+
+            <div class="titular">
+              <label for=""
+                ><h2 style="margin-top: 0; margin-bottom: 0">
+                  Datos del titular
+                </h2></label
+              >
+              <div class="row">
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="name"
+                      placeholder="Nombre"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="apellidoP"
+                      placeholder="Apellido Paterno"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="apellidoM"
+                      placeholder="Apellido Materno"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="dirección"
+                      placeholder="Dirección"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="colonia"
+                      placeholder="Colonia"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="municipio"
+                      placeholder="Municipio"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="number"
+                      name="cp"
+                      placeholder="Código Postal"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="tel"
+                      name="tel"
+                      placeholder="Teléfono"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="tel"
+                      name="cel"
+                      placeholder="Celular"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="email"
+                      name="correo"
+                      placeholder="Correo"
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lugarChamba">
+              <label for=""
+                ><h2 style="margin-top: 0; margin-bottom: 0">
+                  Datos del lugar de trabajo
+                </h2></label
+              >
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="empresa"
+                      placeholder="Empresa"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="tel"
+                      name="tel"
+                      placeholder="Teléfono"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="dirección"
+                      placeholder="Dirección"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="col"
+                      placeholder="Colonia"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="municipio"
+                      placeholder="Municipio"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="number"
+                      name="cp"
+                      placeholder="Código Postal"
+                    />
+                  </p>
+                </div>
+              </div>
+              <br />
+            </div>
+            <div class="center">
+              <input
+                class="form-submit"
+                type="submit"
+                name="registrarC"
+                id="registrarC"
+                value="Registrar"
+              />
+            </div>
+          </form>
+
+          <div class="form-help">
+            <p><a href="/Guzman/Inicio-Sesion.html">Inciar Sesión</a></p>
+          </div>
         </div>
+      </div>
     </div>
 
-    <script>
-
-    </script>
+    <script></script>
     <script src="/Code/Index.js"></script>
-</body>
+  </body>
 </html>

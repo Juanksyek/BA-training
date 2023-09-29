@@ -1,166 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/dlx2edd.css" />
     <link rel="stylesheet" href="/Bootstrap/Responsive.css" />
     <link rel="stylesheet" href="/Bootstrap/Bootstrap.css" />
     <link rel="stylesheet" href="/Css/MenuStyles.css" />
     <link rel="stylesheet" href="/Css/Register.css" />
     <title>Registro de Personal</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="cd-header">
-        <div class="header-wrapper">
-            <div class="logo-wrap">
-                <a href="#" class="end">
-                    <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="">
-                </a>
-            </div>
-            <div class="nav-but-wrap">
-                <div class="menu-icon hover-target">
-                    <span class="menu-icon__line menu-icon__line-left"></span>
-                    <span class="menu-icon__line"></span>
-                    <span class="menu-icon__line menu-icon__line-right"></span>
-                </div>
-            </div>
+      <div class="header-wrapper">
+        <div class="logo-wrap">
+          <a href="#" class="end">
+            <img style="width: 5%" src="/Links/PNG/BA-white.png" alt="" />
+          </a>
         </div>
+        <div class="nav-but-wrap">
+          <div class="menu-icon hover-target">
+            <span class="menu-icon__line menu-icon__line-left"></span>
+            <span class="menu-icon__line"></span>
+            <span class="menu-icon__line menu-icon__line-right"></span>
+          </div>
+        </div>
+      </div>
     </header>
 
     <div class="nav">
-        <div class="nav__content">
-            <ul class="nav__list">
-                <li class="nav__list-item">
-                    <a href="/inicio" class="hover-target">Inicio</a>
-                </li>
-                <li class="nav__list-item">
-                    <a href="#" class="hover-target">Sede</a>
-                </li>
-                <li class="nav__list-item">
-                    <a href="#" class="hover-target">Nosotros</a>
-                </li>
-                <li class="nav__list-item">
-                    <a href="/Guzman/Inicio-Sesion.html" class="hover-target">Inciar Sesión</a>
-                </li>
-                <li class="nav__list-item">
-                    <a href="#" class="hover-target">Programa</a>
-                </li>
-                <li class="nav__list-item">
-                    <a href="#" class="hover-target">Contacto</a>
-                </li>
-            </ul>
-        </div>
+      <div class="nav__content">
+        <ul class="nav__list">
+          <li class="nav__list-item">
+            <a href="/inicio" class="hover-target">Inicio</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Sede</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Nosotros</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="/Guzman/Inicio-Sesion.html" class="hover-target"
+              >Inciar Sesión</a
+            >
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Programa</a>
+          </li>
+          <li class="nav__list-item">
+            <a href="#" class="hover-target">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
+
     <div class="section full-height over-hide">
-        <div class="switch-wrap">
-            <div class="contergeneral">
-                <div class="form-container">
-                    <h1 class="form-header">Registrar Personal</h1>
-                    <br>
-                    <form action="/registrarPersonal" method="POST">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="nombre"
-                                    placeholder="Nombre"
-                                    maxlength="30"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="apellido"
-                                    placeholder="Apellido"
-                                    maxlength="30"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="tel"
-                                    name="tel"
-                                    placeholder="Número de teléfono"
-                                    maxlength="10"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="username"
-                                    placeholder="Nombre de Usuario"
-                                    maxlength="30"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><select name="tipoUsuario" class="form-input">
-                                    <option value="">Selecciona tipo de usuario</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="recepcionista">Recepcionista</option>
-                                    <option value="profesor">Profesor</option>
-                                </select></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="text"
-                                    name="turno"
-                                    placeholder="Turno"
-                                ></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="password"
-                                    placeholder="Contraseña"
-                                    maxlength="15"
-                                ></p>
-                            </div>
-                            <div class="col-md-6">
-                                <p><input
-                                    class="form-input"
-                                    type="password"
-                                    name="contrasena"
-                                    placeholder="Confirmar Contraseña"
-                                    maxlength="15"
-                                ></p>
-                            </div>
-                        </div>
-                        <br>
-                        
-                        <div class="center">
-                            <input
-                                type="submit"
-                                name="registrarP"
-                                class="form-submit"
-                                id="registrarP"
-                                value="Registrar"
-                            >
-                        </div>
-                    </form>
-
-                    <div class="form-help">
-                        <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesión</a></p>
-                    </div>
+      <div class="switch-wrap">
+        <div class="contergeneral">
+          <div class="form-container">
+            <h1 class="form-header">Registrar Personal</h1>
+            <br />
+            <form action="/registrarPersonal" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="nombre"
+                      placeholder="Nombre"
+                      maxlength="30"
+                    />
+                  </p>
                 </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="apellido"
+                      placeholder="Apellido"
+                      maxlength="30"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="tel"
+                      name="tel"
+                      placeholder="Número de teléfono"
+                      maxlength="10"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="username"
+                      placeholder="Nombre de Usuario"
+                      maxlength="30"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <select name="tipoUsuario" class="form-input">
+                      <option value="">Selecciona tipo de usuario</option>
+                      <option value="admin">Administrador</option>
+                      <option value="recepcionista">Recepcionista</option>
+                      <option value="profesor">Profesor</option>
+                    </select>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="text"
+                      name="turno"
+                      placeholder="Turno"
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="password"
+                      placeholder="Contraseña"
+                      maxlength="15"
+                    />
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    <input
+                      class="form-input"
+                      type="password"
+                      name="contrasena"
+                      placeholder="Confirmar Contraseña"
+                      maxlength="15"
+                    />
+                  </p>
+                </div>
+              </div>
+              <br />
+
+              <div class="center">
+                <input
+                  type="submit"
+                  name="registrarP"
+                  class="form-submit"
+                  id="registrarP"
+                  value="Registrar"
+                />
+              </div>
+            </form>
+
+            <div class="form-help">
+              <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesión</a></p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
-    <script>
-        
-    </script>
+    <script></script>
     <script src="/Code/Index.js"></script>
-</body>
+  </body>
 </html>

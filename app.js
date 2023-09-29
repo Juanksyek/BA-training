@@ -70,13 +70,12 @@ app.get("/Usuario-Recepcionista/Inicio-Recepcionista.html", function (req, res) 
     res.sendFile(__dirname + "/Usuario-Recepcionista/Inicio-Recepcionista.html");
 });
 
-
 //Vista Registrar-Cuenta
 app.get('/Usuario-Cobranza/Registrar-Cuenta.html', function(req, res) {
     res.sendFile(__dirname + '/Usuario-Cobranza/Registrar-Cuenta.html');
 }); 
 
-// Vista Registrar-Personal HTML
+// Vista Registrar-Cuenta HTML
 app.get('/Usuario-Recepcionista/Registrar-Personal.html', function (req, res) {
     res.sendFile(__dirname + '/Usuario-Recepcionista/Registrar-Personal.html');
 });

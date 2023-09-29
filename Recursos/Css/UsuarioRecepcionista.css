@@ -37,7 +37,6 @@
     margin: 0;
     font-family: var(--font);
     color: #fff;
-    background-color: #252525;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -46,7 +45,6 @@
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
     min-height: 100vh;
     position: relative;
   }
@@ -145,6 +143,7 @@
     flex-direction: column;
     gap: 4px;
     overflow: hidden;
+    place-items: center;
   }
   main .menu .primary .menu-item {
     font-weight: 400;
@@ -301,10 +300,6 @@
   }
   
   @media (min-width: 1024px) {
-    :root {
-      --i-padding: 1rem;
-      --o-padding: 2rem;
-    }
     .container-general {
       margin: var(--o-padding);
       -webkit-box-shadow: 0 0px 1rem #0003;
@@ -320,9 +315,9 @@
     }
     main .menu {
       width: 74px;
-      position: absolute;
+      /* position: absolute; */
       top: unset;
-      border-radius: var(--radius) 0 0 var(--radius);
+      /* border-radius: var(--radius) 0 0 var(--radius); */
     }
     main .menu:hover {
       border-radius: var(--radius);
@@ -340,10 +335,10 @@
       max-width: 70px;
     }
     main .topbar {
-      position: absolute;
+      /* position: absolute; */
       width: calc(100% - 74px);
       margin-left: 74px;
-      border-radius: 0 var(--radius) 0 0;
+      /* border-radius: 0 var(--radius) 0 0; */
     }
     main .dashboard {
       margin-top: 60px;
