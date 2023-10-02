@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="/Bootstrap/Bootstrap.css" />
     <link rel="stylesheet" href="/Css/MenuStyles.css" />
     <link rel="stylesheet" href="/Css/Register.css" />
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
     <title>Registro de Personal</title>
   </head>
   <body>
@@ -56,127 +63,138 @@
     </div>
 
     <div class="section full-height over-hide">
-      <div class="switch-wrap">
-        <div class="contergeneral">
-          <div class="form-container">
-            <h1 class="form-header">Registrar Personal</h1>
-            <br />
-            <form action="/registrarPersonal" method="POST">
-              <div class="row">
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="text"
-                      name="nombre"
-                      placeholder="Nombre"
-                      maxlength="30"
-                    />
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="text"
-                      name="apellido"
-                      placeholder="Apellido"
-                      maxlength="30"
-                    />
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="tel"
-                      name="tel"
-                      placeholder="Número de teléfono"
-                      maxlength="10"
-                    />
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="text"
-                      name="username"
-                      placeholder="Nombre de Usuario"
-                      maxlength="30"
-                    />
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <p>
-                    <select name="tipoUsuario" class="form-input">
-                      <option value="">Selecciona tipo de usuario</option>
-                      <option value="admin">Administrador</option>
-                      <option value="recepcionista">Recepcionista</option>
-                      <option value="profesor">Profesor</option>
-                    </select>
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="text"
-                      name="turno"
-                      placeholder="Turno"
-                    />
-                  </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="password"
-                      placeholder="Contraseña"
-                      maxlength="15"
-                    />
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p>
-                    <input
-                      class="form-input"
-                      type="password"
-                      name="contrasena"
-                      placeholder="Confirmar Contraseña"
-                      maxlength="15"
-                    />
-                  </p>
-                </div>
-              </div>
-              <br />
+        <div class="switch-wrap">
+            <div class="contergeneral">
+                <div class="form-container">
+                    <h1 class="form-header">Registrar Personal</h1>
+                    <br>
+                    <!-- Lo tenía Montbup como action='/registrarPersonal' method='POST' -->
+                    <form id="registrationForm" action="#">
+                        <div class="row">
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="text"
+                                    name="nombre"
+                                    placeholder="Nombre"
 
-              <div class="center">
-                <input
-                  type="submit"
-                  name="registrarP"
-                  class="form-submit"
-                  id="registrarP"
-                  value="Registrar"
-                />
-              </div>
-            </form>
+                                    required
+                                    allownames 
+                                    minlength="2"
+                                    data-maxlength="30"                                                                      
+                                ></p>
+                                <div class="error"></div>
+                            </div>
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="text"
+                                    name="apellido"
+                                    placeholder="Apellido"
 
-            <div class="form-help">
-              <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesión</a></p>
-            </div>
+                                    required
+                                    minlength="4"
+                                    data-maxlength="30"
+                                    allownames                                    
+                                ></p>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="tel"
+                                    name="tel"
+                                    placeholder="Número de teléfono"
+
+                                    required
+                                    maxlength="10"
+                                    allownumbers                                  
+                                ></p>
+                                <div class="error"></div>
+                            </div>
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="text"
+                                    name="username"
+                                    placeholder="Nombre de Usuario"
+
+                                    required                                    
+                                ></p>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <p><select name="tipoUsuario" class="form-input">
+                                    <option value="" disabled>Tipo de usuario</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="recepcionista">Recepcionista</option>
+                                    <option value="profesor">Profesor</option>
+                                </select></p>
+                                <div class="error"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <p><select name="turno" class="form-input">
+                                  <option value="" disabled>Turno</option>
+                                  <option value="matutino">Matutino</option>
+                                  <option value="vespertino">Vespertino</option>
+                                </select></p>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="password"
+                                    id="password"
+                                    placeholder="Contraseña"
+
+                                    required
+                                    minlength="8"
+                                    data-maxlength="15"
+                                    allowalphanum                                    
+                                ></p>
+                                <div class="error"></div>
+
+                            </div>
+                            <div class="col-md-6 formGroup">
+                                <p><input
+                                    class="form-input"
+                                    type="password"
+                                    placeholder="Confirmar Contraseña"
+
+                                    required
+                                    match="password"
+                                    allowalphanum                                   
+                                ></p>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <div class="center">
+                            <input
+                                type="submit"
+                                name="registrarP"
+                                class="form-submit"
+                                id="registrarP"
+                                value="Registrar"
+                            >
+                        </div>
+                    </form>             
+              <div class="form-help">
+                <p><a href="/Guzman/Inicio-Sesion.html">Iniciar Sesión</a></p>
+              </div>
           </div>
         </div>
       </div>
     </div>
 
-    <script></script>
+    <script src="/Code/client-side-vals.js"></script>
     <script src="/Code/Index.js"></script>
   </body>
 </html>

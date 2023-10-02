@@ -60,130 +60,176 @@
         <div class="form-container-medium">
           <h1 class="form-header">Registrar Cuenta</h1>
           <br />
-          <form action="#">
+          <form id="registrationForm" action="#">
             <label for=""
               ><h2 style="margin-top: 0; margin-bottom: 0">
                 Datos de la cuenta
               </h2></label
             >
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="numCuenta"
                     placeholder="Número de Cuenta"
+
+                    required
+                    data-maxlength="11"
+                    allownumbers
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="text"
                     name="ciudad"
                     placeholder="Ciudad"
+
+                    required
+                    minlength="6"
+                    data-maxlength="30"
+                    allownames
                   />
                 </p>
+                <div class="error"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md">
+              <div class="col-md formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="text"
                     name="ejecutivo"
                     placeholder="Ejecutivo de publicidad"
+
+                    required
+                    minlength="10"
+                    data-maxlength="50"
+                    allownames
                   />
                 </p>
+                <div class="error"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="matricula"
                     placeholder="Matricula"
+
+                    required
+                    data-maxlength="11"
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="date"
                     name="fechaMatricula"
                     placeholder="Fecha de matricula"
+
+                    required
                   />
                 </p>
+                <div class="error"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-3 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="precioPactado"
                     placeholder="Precio pactado"
+
+                    required
+                    allowfloats
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="pagoIncial"
                     placeholder="Pago inicial"
+
+                    required
+                    allowfloats
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="saldo"
                     placeholder="Saldo"
+
+                    required
+                    allowfloats
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="numPagos"
                     placeholder="N.º de pagos"
+
+                    required
                   />
                 </p>
+                <div class="error"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="number"
                     name="montoMens"
                     placeholder="Monto de mensualidad"
+
+                    required
+                    allowfloats
                   />
                 </p>
+                <div class="error"></div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6 formGroup">
                 <p>
                   <input
                     class="form-input"
                     type="date"
                     name="primerVenc"
                     placeholder="Primer vencimiento"
+
+                    required
                   />
                 </p>
+                <div class="error"></div>
               </div>
             </div>
             <textarea
@@ -202,111 +248,161 @@
                 </h2></label
               >
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="name"
                       placeholder="Nombre"
+
+                      required
+                      minlength="2"
+                      data-maxlength="30"
+                      allownames
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="apellidoP"
                       placeholder="Apellido Paterno"
+
+                      required
+                      minlength="4"
+                      data-maxlength="20"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="apellidoM"
                       placeholder="Apellido Materno"
+
+                      required
+                      minlength="4"
+                      data-maxlength="20"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="dirección"
                       placeholder="Dirección"
+
+                      required
+                      allowalphanum
+                      data-maxlength="30"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="colonia"
                       placeholder="Colonia"
+
+                      required
+                      allownames
+                      data-maxlength="20"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="municipio"
                       placeholder="Municipio"
+
+                      required
+                      allownames
+                      data-maxlength="30"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="number"
                       name="cp"
                       placeholder="Código Postal"
+
+                      required
+                      allownumbers
+                      maxlength="5"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="tel"
                       name="tel"
                       placeholder="Teléfono"
+
+                      required
+                      allownumbers
+                      maxlength="10"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="tel"
                       name="cel"
                       placeholder="Celular"
+
+                      required
+                      allownumbers
+                      maxlength="10"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md">
+                <div class="col-md formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="email"
                       name="correo"
                       placeholder="Correo"
+
+                      required
+                      pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"                     
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
             </div>
@@ -318,69 +414,98 @@
                 </h2></label
               >
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="empresa"
                       placeholder="Empresa"
+
+                      required
+                      allownames
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="tel"
                       name="tel"
                       placeholder="Teléfono"
+
+                      required
+                      maxlength="10"
+                      allownumbers
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="dirección"
                       placeholder="Dirección"
+
+                      required
+                      allowalphanum
+                      data-maxlength="30"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="col"
                       placeholder="Colonia"
+
+                      required
+                      allownames
+                      data-maxlength="20"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
                       type="text"
                       name="municipio"
                       placeholder="Municipio"
+
+                      required
+                      allownames
+                      data-maxlength="30"
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 formGroup">
                   <p>
                     <input
                       class="form-input"
-                      type="number"
+                      type="tel"
                       name="cp"
                       placeholder="Código Postal"
+
+                      required
+                      maxlength="5"
+                      allownumbers
                     />
                   </p>
+                  <div class="error"></div>
                 </div>
               </div>
               <br />
@@ -403,7 +528,7 @@
       </div>
     </div>
 
-    <script></script>
+    <script src="/Code/client-side-vals.js"></script>
     <script src="/Code/Index.js"></script>
   </body>
 </html>
