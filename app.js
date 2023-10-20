@@ -6,6 +6,7 @@ const app = express();
 
 
 // Configuración de la conexión a la base de datos
+/*
 const db = mysql.createConnection({
     host: '127.0.0.1',  // La dirección del servidor 
     port: 3306,
@@ -25,6 +26,7 @@ console.log('Conexión exitosa a la base de datos');
 
 
 module.exports.db = db;
+*/
 
 app.use(bodyParser.urlencoded({extended: true }));
 
