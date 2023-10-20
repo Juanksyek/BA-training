@@ -14,18 +14,56 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   cuenta.init({
-    ID_Cuenta: DataTypes.INTEGER,
-    NumeroCuenta: DataTypes.INTEGER,
-    Matricula: DataTypes.INTEGER,
-    FechaMatricula: DataTypes.DATE,
-    Ciudad: DataTypes.STRING,
-    Ejecutivo: DataTypes.STRING,
-    Precio: DataTypes.FLOAT,
-    PagoInicial: DataTypes.FLOAT,
-    SaldoInicial: DataTypes.FLOAT,
-    NumeroPagos: DataTypes.INTEGER,
-    MontoMensualidad: DataTypes.FLOAT,
-    PrimerVencimiento: DataTypes.DATE
+    ID_Cuenta: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    NumeroCuenta: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true
+    },
+    Matricula: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true
+    },
+    FechaMatricula: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    Ciudad: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    Ejecutivo: {
+      type: DataTypes.STRING
+    },
+    Precio: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+    PagoInicial: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+    SaldoInicial: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+    NumeroPagos: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    MontoMensualidad: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+    PrimerVencimiento: {
+      type: DataTypes.DATE
+    },
   }, {
     sequelize,
     modelName: 'cuenta',

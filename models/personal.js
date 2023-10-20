@@ -11,13 +11,30 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      personal.belongsTo(models.usuario, {
+        as: 'usuario',
+        foreignKey: 'ID_Usuario',
+      });
     }
   }
   personal.init({
-    ID_Personal: DataTypes.INTEGER,
-    Nombre: DataTypes.STRING,
-    Teléfono: DataTypes.STRING,
-    ID_Usuario: DataTypes.INTEGER
+    ID_Personal: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    Nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Teléfono: {
+      type: DataTypes.STRING,
+    },
+    ID_Usuario: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   }, {
     sequelize,
     modelName: 'personal',

@@ -11,14 +11,39 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      profesor.belongsTo(models.usuario, {
+        as: 'usuario',
+        foreignKey: 'ID_Usuario',
+      });
+    
+      profesor.hasMany(models.clases, {
+        as: 'clases',
+        foreignKey: 'ID_Profesor',
+      });
     }
   }
   profesor.init({
-    ID_Profesor: DataTypes.INTEGER,
-    Nombre: DataTypes.STRING,
-    Teléfono: DataTypes.INTEGER,
-    Turno: DataTypes.STRING,
-    ID_Usuario: DataTypes.INTEGER
+    ID_Profesor: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    Nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    Teléfono: {
+      type: DataTypes.STRING,
+    },
+    Turno: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    ID_Usuario: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   }, {
     sequelize,
     modelName: 'profesor',

@@ -11,6 +11,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      usuario.belongsTo(models.sedes, {
+        as: 'sedes',
+        foreignKey: 'ID_Sede',
+      });
+    
+      usuario.hasMany(models.alumnos, {
+        as: 'alumnos',
+        foreignKey: 'ID_Usuario',
+      });
+    
+      usuario.hasOne(models.personal, {
+        as: 'personal',
+        foreignKey: 'ID_Usuario',
+      });
+    
+      usuario.hasOne(models.profesor, {
+        as: 'profesor',
+        foreignKey: 'ID_Usuario',
+      });
     }
   }
   usuario.init({
@@ -36,7 +55,8 @@ module.exports = (sequelize, DataTypes) => {
     Estado: {
       type: DataTypes.STRING,
       allowNull: false
-    },ID_Sede: {
+    },
+    ID_Sede: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

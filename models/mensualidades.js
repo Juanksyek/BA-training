@@ -11,19 +11,47 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      mensualidades.belongsTo(models.cuenta, {
+        as: 'cuenta',
+        foreignKey: 'ID_Cuenta',
+      });
     }
   }
   mensualidades.init({
-    ID_Mensualidad: DataTypes.INTEGER,
-    ID_Cuenta: DataTypes.INTEGER,
-    Fecha: DataTypes.DATE,
-    NumeroPago: DataTypes.INTEGER,
-    Mes: DataTypes.STRING,
-    Monto: DataTypes.FLOAT,
-    Saldo: DataTypes.FLOAT,
-    FechaPago: DataTypes.DATE,
-    Recibo: DataTypes.STRING,
-    Ejecutivo: DataTypes.STRING
+    ID_Mensualidad: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    ID_Cuenta: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    Fecha: {
+      type: DataTypes.DATE,
+    },
+    NumeroPago: {
+      type: DataTypes.INTEGER,
+    },
+    Mes: {
+      type: DataTypes.STRING,
+    },
+    Monto: {
+      type: DataTypes.FLOAT,
+    },
+    Saldo: {
+      type: DataTypes.FLOAT,
+    },
+    FechaPago: {
+      type: DataTypes.DATE,
+    },
+    Recibo: {
+      type: DataTypes.STRING,
+    },
+    Ejecutivo: {
+      type: DataTypes.STRING,
+    }
   }, {
     sequelize,
     modelName: 'mensualidades',

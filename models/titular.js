@@ -11,21 +11,59 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      titular.belongsTo(models.cuenta, {
+        as: 'cuenta',
+        foreignKey: 'ID_Cuenta',
+      });
+    
+      titular.hasOne(models.datostrabajo, {
+        as: 'datosTrabajo',
+        foreignKey: 'ID_Titular',
+      });
     }
   }
   titular.init({
-    ID_Titular: DataTypes.INTEGER,
-    NombreTitular: DataTypes.STRING,
-    ApellidoMTitular: DataTypes.STRING,
-    ApellidoPTitular: DataTypes.STRING,
-    Direccion: DataTypes.STRING,
-    Colonia: DataTypes.STRING,
-    Municipio: DataTypes.STRING,
-    CP: DataTypes.STRING,
-    Telefono: DataTypes.STRING,
-    Celular: DataTypes.STRING,
-    Correo: DataTypes.STRING,
-    ID_Cuenta: DataTypes.INTEGER
+    ID_Titular: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER,
+    },
+    NombreTitular: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    ApellidoMTitular: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    ApellidoPTitular: {
+      type: DataTypes.STRING,
+    },
+    Direccion: {
+      type: DataTypes.STRING,
+    },
+    Colonia: {
+      type: DataTypes.STRING,
+    },
+    Municipio: {
+      type: DataTypes.STRING,
+    },
+    CP: {
+      type: DataTypes.STRING,
+    },
+    Telefono: {
+      type: DataTypes.STRING,
+    },
+    Celular: {
+      type: DataTypes.STRING,
+    },
+    Correo: {
+      type: DataTypes.STRING,
+    },
+    ID_Cuenta: {
+      type: DataTypes.INTEGER,
+    }
   }, {
     sequelize,
     modelName: 'titular',
