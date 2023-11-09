@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@main/css/iconoir.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lucaburgio/iconoir@main/css/iconoir.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/dlx2edd.css" />
     <link rel="stylesheet" href="Bootstrap/Responsive.css" />
@@ -10,6 +13,7 @@
     <link rel="stylesheet" href="Css/MenuStyles.css" />
     <link rel="stylesheet" href="Css/Tarjetas.css" />
     <link rel="stylesheet" href="Css/Footer.css" />
+    <link rel="stylesheet" href="Css/Blog.css">
     <title>BA Training</title>
   </head>
   <body>
@@ -17,11 +21,7 @@
       <div class="header-wrapper">
         <div class="logo-wrap">
           <a href="#" class="end">
-            <img
-              style="width: 5%"
-              src="Links/PNG/BA-white.png"
-              alt=""
-            />
+            <img style="width: 5%" src="Links/PNG/BA-white.png" alt="" />
           </a>
         </div>
         <div class="nav-but-wrap">
@@ -55,12 +55,14 @@
             <a href="#" class="hover-target">Programa</a>
           </li>
           <li class="nav__list-item">
-            <a href="Usuario-Admin/Inicio-Admin.html" class="hover-target">Contacto</a>
+            <a href="Usuario-Admin/Inicio-Admin.html" class="hover-target"
+              >Contacto</a
+            >
           </li>
         </ul>
       </div>
     </div>
-    <div class="contergeneral" style="padding-top: 5%;">
+    <div class="contergeneral" style="padding-top: 5%">
       <div class="row container-card">
         <div class="col-md-12">
           <div class="row">
@@ -68,22 +70,26 @@
               <h1>BRITISH AMERICAN TRAINING</h1>
             </div>
             <div class="col-md-12 center">
-              <p style="text-align: center;">Clases de Ingles para niños, jóvenes, estudiantes nivel medio superior, profesionistas y Empresas.</p>
+              <p style="text-align: center">
+                Clases de Ingles para niños, jóvenes, estudiantes nivel medio
+                superior, profesionistas y Empresas.
+              </p>
             </div>
           </div>
-          <div class="row" style="padding-top: 3%;">
+          <div class="row" style="padding-top: 3%">
             <div class="col-md-4">
               <div class="row">
                 <div class="col-md-12">
                   <div class="box">
                     <span></span>
                     <div class="content">
-                      <img src="Links/PNG/Engrane.png" alt="">
+                      <img src="Links/PNG/Engrane.png" alt="" />
                       <h2>Ventaja competitva</h2>
                       <p>
                         El ingles es considerado el idioma universal en el mundo
-                        empresarial y laboral, lo que te da una ventaja competitiva al
-                        buscar empleo o trabajar en empresas internacionales.
+                        empresarial y laboral, lo que te da una ventaja
+                        competitiva al buscar empleo o trabajar en empresas
+                        internacionales.
                       </p>
                       <p><a href="#">Leer mas</a></p>
                     </div>
@@ -97,12 +103,12 @@
                   <div class="box">
                     <span></span>
                     <div class="content">
-                      <img src="Links/PNG/Dialogo.png" alt="">
+                      <img src="Links/PNG/Dialogo.png" alt="" />
                       <h2>Comunicacion especifica</h2>
                       <p>
-                        Saber ingles te permite comunicarte efectivamente con personas
-                        de diferentes culturas y origenes, mejorando tus habilidades de
-                        comunicacion y trabajo en equipo.
+                        Saber ingles te permite comunicarte efectivamente con
+                        personas de diferentes culturas y origenes, mejorando
+                        tus habilidades de comunicacion y trabajo en equipo.
                       </p>
                       <p><a href="#">Leer mas</a></p>
                     </div>
@@ -116,12 +122,12 @@
                   <div class="box">
                     <span></span>
                     <div class="content">
-                      <img src="Links/PNG/Lupa.png" alt="">
+                      <img src="Links/PNG/Lupa.png" alt="" />
                       <h2>Acceso a recursos</h2>
                       <p>
-                        La habilidad de leer y comprender documentos o ver videos en
-                        ingles te da acceso a recursos importantes en investigación y
-                        tecnología.
+                        La habilidad de leer y comprender documentos o ver
+                        videos en ingles te da acceso a recursos importantes en
+                        investigación y tecnología.
                       </p>
                       <p><a href="#">Leer mas</a></p>
                     </div>
@@ -131,6 +137,30 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="contergeneral">
+      <div class="row container-card">
+        <script>
+          // Hacer una petición a la API para obtener los posts
+          fetch("/api/posts")
+            .then((response) => response.json())
+            .then((data) => {
+              const posts = data.posts;
+              const postList = document.getElementById("post-list");
+
+              posts.forEach((post) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                <h2>${post.title}</h2>
+                <img class="imagen-post" src="${post.image_path}" alt="Imagen del post">
+                <p>${post.content}</p>
+                <small>Publicado el ${post.created_at}</small>`;
+                postList.appendChild(listItem);
+              });
+            });
+        </script>
+        <ul id="post-list"></ul>
       </div>
     </div>
 
@@ -168,26 +198,39 @@
             </ul>
           </div>
         </div>
-        <hr>
+        <hr />
       </div>
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-         <a href="#">BA Training</a>.
+            <p class="copyright-text">
+              Copyright &copy; 2023 All Rights Reserved by
+              <a href="#">BA Training</a>.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="#"><span class="iconoir-facebook"></span></a></li>
-              <li><a class="twitter" href="#"><span class="iconoir-twitter"></span></a></li>
-              <li><a class="linkedin" href="#"><span class="iconoir-linkedin"></span></a></li>   
+              <li>
+                <a class="facebook" href="#"
+                  ><span class="iconoir-facebook"></span
+                ></a>
+              </li>
+              <li>
+                <a class="twitter" href="#"
+                  ><span class="iconoir-twitter"></span
+                ></a>
+              </li>
+              <li>
+                <a class="linkedin" href="#"
+                  ><span class="iconoir-linkedin"></span
+                ></a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-</footer>
+    </footer>
 
     <script src="Code/Index.js"></script>
   </body>

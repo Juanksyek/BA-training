@@ -1,0 +1,10 @@
+CREATE DATABASE blog_db;
+USE blog_db;
+
+CREATE TABLE posts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255),
+  content TEXT,
+  image_path VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

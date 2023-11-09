@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Css/Blog.css" />
+    <title>Prueba de blog</title>
+  </head>
+  <body>
+    <h1>Crear post</h1>
+    <form action="/create" method="POST" enctype="multipart/form-data">
+      <input type="text" name="title" placeholder="Titulo del post" required />
+      <input type="text" name="content" placeholder="Contenido del Post" required />
+      <input type="file" name="image" accept="image/*" />
+      <button type="submit">Publicar Post</button>
+    </form>
+    <ul>
+      <% posts.forEach(post => { %>
+      <li>
+        <h2><%= post.title %></h2>
+        <img class="imagen-post" src="<%= post.image_path %>" alt="Imagen del post"/>
+        <p><%= post.content %></p>
+        <small>Publicado el <%= post.created_at %></small>
+      </li>
+      <button class="edit-btn" data-post-id="<%= post.id %>">Editar</button>
+      <a href="/delete/<%= post.id %>" class="delete-post">Eliminar Post</a>
+      <% }); %>
+    </ul>
+    <div class="modal" id="editModal">
+      <div class="modal-content"></div>
+    </div>
+    <script>
+      document.querySelectorAll(".delete-post").forEach((element) => {
+        element.addEventListener("click", (e) => {
+          const confirmed = confirm(
+            "¿Estás seguro de que deseas eliminar este post?"
+          );
+          if (!confirmed) {
+            e.preventDefault(); // Cancela el enlace si no se confirma
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const editButtons = document.querySelectorAll(".edit-btn");
+        const modal = document.getElementById("editModal");
+        const modalContent = modal.querySelector(".modal-content");
+
+        editButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const postId = this.dataset.postId;
+
+            // Abre el modal
+            modal.style.display = "block";
+
+            // Realiza una petición para cargar la vista de edición
+            fetch(`/edit/${postId}`)
+              .then(response => response.text())
+              .then(html => {
+                modalContent.innerHTML = html;
+              });
+          });
+        });
+
+        // Agrega un evento para cerrar el modal
+        const closeModalButton = modal.querySelector(".close-modal");
+        closeModalButton.addEventListener("click", function () {
+          modal.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
