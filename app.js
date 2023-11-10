@@ -13,7 +13,7 @@ app.use(express.static("Recursos"));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Ruta donde se guardarán los archivos
+    cb(null, path.join(__dirname, 'uploads')); // Ruta donde se guardarán los archivos
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname); // Usa el nombre original del archivo
@@ -87,7 +87,10 @@ app.get("/edit/:id", (req, res) => {
 app.post("/update/:id", upload.single('image'), (req, res) => {
   const postId = req.params.id;
   const { title, content } = req.body;
-  const imagePath = req.file ? req.file.path.replace('public\\', '') : null; // Obtiene la ruta de la imagen
+  const imagePath = req.file ? req.file.filename : null;
+
+  console.log(req.file);  // Verifica si hay un archivo cargado
+  console.log(imagePath); // Verifica la ruta de la imagen
 
   db.query(
     "UPDATE posts SET title = ?, content = ?, image_path = ? WHERE id = ?",
