@@ -13,7 +13,12 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ID_Cuenta: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'cuenta',
+          key: 'ID_Cuenta'
+        },
       },
       Fecha: {
         type: Sequelize.DATE

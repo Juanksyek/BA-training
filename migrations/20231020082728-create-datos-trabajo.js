@@ -28,7 +28,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       ID_Titular: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'titular',
+          key: 'ID_Titular'
+        },
       },
       createdAt: {
         allowNull: false,

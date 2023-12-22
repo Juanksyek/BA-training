@@ -22,7 +22,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       Matricula: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'cuenta',
+            key: 'Matricula'
+        },
       },
       Edad: {
         type: Sequelize.INTEGER
@@ -37,7 +42,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       ID_Usuario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'usuario',
+            key: 'ID_Usuario'
+        },
       },
       MatriculaCuenta: {
         type: Sequelize.INTEGER

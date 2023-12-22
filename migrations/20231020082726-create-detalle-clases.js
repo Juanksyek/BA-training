@@ -13,10 +13,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ID_Clase: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'clases',
+            key: 'ID_Clase'
+        },
       },
       ID_Alumno: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'alumnos',
+            key: 'ID_Alumno'
+        },
       },
       createdAt: {
         allowNull: false,

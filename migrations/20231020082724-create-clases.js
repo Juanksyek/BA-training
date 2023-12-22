@@ -22,10 +22,20 @@ module.exports = {
         type: Sequelize.TIME
       },
       ID_Profesor: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'profesor',
+            key: 'ID_Profesor'
+        },
       },
       ID_Sede: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'sedes',
+            key: 'ID_Sede'
+        },
       },
       createdAt: {
         allowNull: false,

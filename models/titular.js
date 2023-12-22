@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     ApellidoPTitular: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     Direccion: {
       type: DataTypes.STRING,
@@ -63,6 +64,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     ID_Cuenta: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     }
   }, {
     sequelize,

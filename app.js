@@ -11,6 +11,8 @@ app.use(express.static('uploads'));
 
 app.use(express.static("Recursos"));
 
+require('./routes')(app);
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(__dirname, 'uploads')); // Ruta donde se guardarán los archivos
@@ -19,6 +21,7 @@ const storage = multer.diskStorage({
     cb(null, file.originalname); // Usa el nombre original del archivo
   }
 });
+
 
 const upload = multer({ storage });
 
@@ -44,6 +47,10 @@ console.log('Conexión exitosa a la base de datos');
 
 module.exports.db = db;
 */
+
+//comentarios porque no tengo esa db y ni modo
+
+/*
 
 //Modulo para renderizar las vistas con ejs
 const db = mysql.createConnection({
@@ -133,7 +140,8 @@ app.get("/delete/:id", function (req, res) {
       res.redirect("/index");
     });
   });
-  
+
+*/  
 
 //Abrir index cuando se ejecuta el servidor
 //Esta parte del codigo siempre debe quedar hasta arriba :)

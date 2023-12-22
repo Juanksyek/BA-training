@@ -43,7 +43,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       ID_Cuenta: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'cuenta',
+          key: 'ID_Cuenta'
+        },
       },
       createdAt: {
         allowNull: false,
