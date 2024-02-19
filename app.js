@@ -11,14 +11,17 @@ app.use(express.static('uploads'));
 
 app.use(express.static("Recursos"));
 
+//multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads/'); // Ruta donde se guardarán los archivos
+    cb(null, 'uploads/');
+    cb(null, path.join(__dirname, 'uploads')); // Ruta donde se guardarán los archivos
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname); // Usa el nombre original del archivo
   }
 });
+
 
 const upload = multer({ storage });
 
@@ -87,17 +90,36 @@ app.get("/edit/:id", (req, res) => {
 app.post("/update/:id", upload.single('image'), (req, res) => {
   const postId = req.params.id;
   const { title, content } = req.body;
-  const imagePath = req.file ? req.file.path.replace('public\\', '') : null; // Obtiene la ruta de la imagen
+  const existingImagePath = req.body.existingImage;  // Obtén la ruta de la imagen existente
 
-  db.query(
-    "UPDATE posts SET title = ?, content = ?, image_path = ? WHERE id = ?",
-    [title, content, imagePath, postId],
-    (err, results) => {
-      if (err) throw err;
-      res.redirect("/index");
-    }
-  );
+  console.log(req.file);  // Verifica si hay un archivo cargado
+  console.log(existingImagePath); // Verifica la ruta de la imagen existente
+
+  // Verifica si hay una nueva imagen cargada
+  if (req.file) {
+    const imagePath = req.file.filename;
+
+    db.query(
+      "UPDATE posts SET title = ?, content = ?, image_path = ? WHERE id = ?",
+      [title, content, imagePath, postId],
+      (err, results) => {
+        if (err) throw err;
+        res.redirect("/index");
+      }
+    );
+  } else {
+    // No hay una nueva imagen cargada, actualiza solo el título y el contenido
+    db.query(
+      "UPDATE posts SET title = ?, content = ?, image_path = ? WHERE id = ?",
+      [title, content, existingImagePath, postId],
+      (err, results) => {
+        if (err) throw err;
+        res.redirect("/index");
+      }
+    );
+  }
 });
+
 
 //Para poder consultar los post, se hace una consulta mediante una API
 app.get("/api/posts", function (req, res) {
